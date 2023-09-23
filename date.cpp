@@ -4,11 +4,11 @@
 
 #include "date.h"
 
-void date::setDate(std::istream &ist)
+void Date::setDate(std::istream &ist)
 {
     ist >> year >> month >> day;
 }
-void date::printDate() const
+void Date::printDate(std::ostream &ost) const
 {
-    std::cout << year << " " << month << " " << day << " ";
+    ost << year << " " << month << " " << day << " ";
 }

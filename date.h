@@ -6,14 +6,14 @@
 #define UNTITLED_DATE_H
 #include <fstream>
 #include <iostream>
-class date{
+class Date{
 private:
     int day;
     int month;
     int year;
 public:
     void setDate(std::istream &ist);
-    void printDate() const;
+    void printDate(std::ostream &ost) const;
 };
 
 #endif //UNTITLED_DATE_H

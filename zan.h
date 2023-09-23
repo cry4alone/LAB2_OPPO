@@ -11,14 +11,14 @@
 #include "date.h"
 
 
-class zan  {
+class Zan  {
 private:
     std::string name;
-    date CurrDate;
+    Date currdate;
     std::string time;
 public:
     void load_txt(std::istream &ist);
-    void print_txt();
+    void print_txt(std::ostream &ost);
 };
 
 #endif //UNTITLED_ZAN_H
