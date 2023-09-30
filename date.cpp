@@ -14,5 +14,5 @@ void Date::setDate(std::istream &ist)
 }
 void Date::printDate(std::ostream &ost) const
 {
-    ost << year << " " << month << " " << day << " ";
+    ost << year << ":" << month << ":" << day << " ";
 }
