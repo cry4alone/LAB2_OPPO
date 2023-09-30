@@ -14,7 +14,7 @@ int load(vector<Zan>& data, istream& ist)
         data.push_back(newClass);
         size++;
     }
-    return size - 1;
+    return size;
 }
 
 void print_data(vector<Zan>& data, int size)
