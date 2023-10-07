@@ -6,14 +6,18 @@
 #define UNTITLED_DATE_H
 #include <fstream>
 #include <iostream>
-class Date{
+#include <vector>
+class date{
 private:
     int day;
     int month;
     int year;
 public:
-    void setDate(std::istream &ist);
-    void printDate(std::ostream &ost) const;
+    void set_Date(std::istream &ist);
+    void print_Date() const;
+    void read_file(std::istream &ist);
+    void check_file(std::istream &ist);
+    bool check_year(int year);
 };
 
 #endif //UNTITLED_DATE_H

@@ -3,16 +3,16 @@
 //
 #include "zan.h"
 
-void Zan::load_txt(std::istream &ist)
+void zan::load_txt(std::istream &ist)
 {
-    currdate.setDate(ist);
+    CurrDate.set_Date(ist);
     ist >> time;
     ist >> name;
 }
 
-void Zan::print_txt(std::ostream &out)
+void zan::print_txt()
 {
-    currdate.printDate(out);
-    out << time << " ";
-    out << name << " ";
+    CurrDate.print_Date();
+    std::cout << time << " ";
+    std::cout << name << " ";
 }

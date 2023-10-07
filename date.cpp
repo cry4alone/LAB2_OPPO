@@ -4,15 +4,46 @@
 
 #include "date.h"
 
-void Date::setDate(std::istream &ist)
+void date::set_Date(std::istream &ist)
 {
-    std::string buff;
-    ist >> buff;
-    year = std::stoi(buff.substr(0, 4));
-    month = std::stoi(buff.substr(5, 2));
-    day = std::stoi(buff.substr(8, 2));
+    read_file(ist);
+    check_file(ist);
 }
-void Date::printDate(std::ostream &ost) const
+void date::print_Date() const
 {
-    ost << year << ":" << month << ":" << day << " ";
+    std::cout << year << " " << month << " " << day << " ";
 }
+
+void date::read_file(std::istream &ist)
+{
+    char dot;
+    dot = ist.get();
+    if (dot != '.') {throw std::runtime_error("Ожидалась точка");}
+    ist >> year >> month >> day;
+    if (!ist.good()) {throw std::runtime_error("Строка не считана");}
+}
+
+void date::check_file(std::istream &ist)
+{
+    static const std::vector<int>days_of_month = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    static const std::vector<int>days_of_month_v = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    if(check_year(year))
+    {
+        if (days_of_month_v[month] <= day) {throw std::runtime_error("Неправильный день");}
+    }
+    else
+    {
+        if (days_of_month[month] <= day) {throw std::runtime_error("Неправильный день");}
+    }
+}
+
+bool date::check_year(int year)
+{
+    if(year % 4 == 0)
+    {
+        return true;
+    }
+    return false;
+}
+
+
