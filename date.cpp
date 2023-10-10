@@ -17,9 +17,13 @@ void date::print_Date() const
 void date::read_file(std::istream &ist)
 {
     char dot;
+    ist >> year;
     dot = ist.get();
     if (dot != '.') {throw std::runtime_error("Ожидалась точка");}
-    ist >> year >> month >> day;
+    ist>> month;
+    dot = ist.get();
+    if (dot != '.') {throw std::runtime_error("Ожидалась точка");}
+    ist >> day;
     if (!ist.good()) {throw std::runtime_error("Строка не считана");}
 }
 

@@ -17,7 +17,7 @@ public:
     void print_Date() const;
     void read_file(std::istream &ist);
     void check_file(std::istream &ist);
-    bool check_year(int year);
+    static bool check_year(int year);
 };
 
 #endif //UNTITLED_DATE_H

@@ -14,7 +14,7 @@
 class Zan  {
 private:
     std::string name;
-    Date currdate;
+    date currdate;
     std::string time;
 public:
     void load_txt(std::istream &ist);
